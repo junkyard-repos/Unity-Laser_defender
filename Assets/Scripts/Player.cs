@@ -17,16 +17,37 @@ public class Player : MonoBehaviour
   float xMax;
   float yMin;
   float yMax;
+  float deltaX;
+  float deltaY;
+  float newXPos;
+  float newYPos;
 
   void Start()
   {
     SetupMoveBoundaries();
+    newXPos = 0;
+    newYPos = yMin;
   }
 
   void Update()
   {
-    Move();
+    // Move();
+    UpdatePlayerPos();
     Fire();
+  }
+
+  private void FixedUpdate()
+  {
+    Move();
+  }
+
+  private void UpdatePlayerPos()
+  {
+    deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
+    deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+
+    newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
+    newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
   }
 
   private void SetupMoveBoundaries()
@@ -42,12 +63,6 @@ public class Player : MonoBehaviour
 
   private void Move()
   {
-    float deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
-    float deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
-
-    float newXPos = Mathf.Clamp(transform.position.x + deltaX, xMin, xMax);
-    float newYPos = Mathf.Clamp(transform.position.y + deltaY, yMin, yMax);
-
     transform.position = new Vector2(newXPos, newYPos);
   }
 
