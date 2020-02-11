@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start Menu.unity
+    guid: 0275bc2ccdab808459b468a7faa099de
+  - enabled: 1
+    path: Assets/Scenes/Laser Shooter.unity
+    guid: 9e6bd446d70495444b31d32c41375c34
+  - enabled: 1
+    path: Assets/Scenes/Game Over.unity
+    guid: de846c1810ac1a0498cd29aba9235ca3
   m_configObjects: {}

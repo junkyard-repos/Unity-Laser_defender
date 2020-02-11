@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 6595744159429120719}
   - component: {fileID: 70020918670936822}
   - component: {fileID: 114252138240480338}
-  m_Layer: 0
+  - component: {fileID: 50232266291383160}
+  - component: {fileID: 114079062136134206}
+  m_Layer: 9
   m_Name: Roger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,3 +125,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  bulletSpeed: 5
+  laserPrefab: {fileID: 4807671142752096017, guid: a5f948a496aae5e4c8b631ae7f84e324,
+    type: 3}
+  explosionPrefab: {fileID: 3070842782998002620, guid: e57914d6f8513c84caeb4c441e382a39,
+    type: 3}
+  explosionSound: {fileID: 8300000, guid: cd3e01364bb380b498569975bfb10164, type: 3}
+  explosionSoundVolume: 0.5
+  shootSound: {fileID: 8300000, guid: dc969d86e0a8f6344beae6fe12777e6c, type: 3}
+  shootSoundVolume: 0.5
+--- !u!50 &50232266291383160
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3133747373757641780}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &114079062136134206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3133747373757641780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ba92ca558abb145976a59700305798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
